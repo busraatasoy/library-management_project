@@ -4,32 +4,35 @@ Bu proje, kitap ekleme, listeleme ve yönetim işlemlerini terminal ve API taban
 
 ## 🚀 Kurulum
 
-1. Reponun klonlanması:
+## 1. Reponun klonlanması:
 
-git clone https://github.com/busraatasoy/library-management_project.git
+- ``git clone https://github.com/busraatasoy/library-management_project.git``
+- ``cd library-management``
 
-cd library-management
 
-2. Sanal ortam oluşturun ve gerekli paketleri yükleyin:
+## 2. Sanal ortam oluşturun ve gerekli paketleri yükleyin:
 
-cd library-management
+- ``python -m venv .venv``
 
-python -m venv .venv
+- ``.venv\Scripts\activate   # Windows``
 
-.venv\Scripts\activate   # Windows
+- ``source .venv/bin/activate   # Mac/Linux için``
 
-pip install -r requirements.txt
+## 3. Gereksinimleri yükleyin:
+
+- ``pip install -r requirements.txt``
 
 **▶️ Kullanım**
 **Aşama 1 ve 2 - Terminal Uygulaması**
 
-python main.py
+`python main.py`
 
 - Menü üzerinden kitap ekleyebilir, silebilir, listeleyebilirsiniz.
 - ISBN girildiğinde Open Library API’den bilgiler çekilecektir.
 
 **Aşama 3 - API Sunucusu**
-uvicorn api:app --reload
+`uvicorn api:app --reload`
+
 - Tarayıcıda http://127.0.0.1:8000/docs adresine giderek interaktif API dokümantasyonunu kullanabilirsiniz.
 
 
@@ -42,17 +45,8 @@ uvicorn api:app --reload
 
 **Testler**
 
-pytest tests/
+**Tüm Testleri Çalıştırma**
+
+`pytest tests/`
 
 - Tüm metod ve API testleri burada çalıştırılabilir.
-- 
-**Test Senaryoları**
-- Yeni kitap eklendiğinde listeye doğru şekilde yansımalı.
-
-- Aynı ISBN ile tekrar kitap eklenmeye çalışıldığında hata dönmeli.
-
-- Var olmayan bir ISBN silinmeye çalışıldığında hata dönmeli.
-
-- API üzerinden eklenen kitaplar, GET /books ile görülebilmeli.
-
-
